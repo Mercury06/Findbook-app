@@ -14,16 +14,16 @@ const params = {
 export const booksAPI = {
     
     getBooks ( {searchValue, category} ) {
-        debugger
+        //debugger
         return axios.get ( baseURL + `?q=${searchValue}${category !== "all" ? `+ subject:${category}` : ""}`, {params})
         // return axios.get ("https://www.googleapis.com/books/v1/volumes"+`?q=${searchValue}`)
         // return axios.get ( "https://www.googleapis.com/books/v1/volumes?q=subject:books")
         //return axios.get ( "https://jsonplaceholder.typicode.com/todos" )
-        .then (response => {
-            console.log(response.data)
+        .then (response => response.data)
+            
             //return response
-        });
-    },    
+    }
+       
 
 
 }

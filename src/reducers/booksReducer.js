@@ -54,12 +54,13 @@ export const getBooksThunkCreator = ({ ...form}) => {
     //debugger
     return async (dispatch) => {     
         try {   
-            //dispatch(showLoader())
-             const response = await booksAPI.getBooks({ ...form})
+            dispatch(showLoader())
+            const response = await booksAPI.getBooks({ ...form})
             // const response = await axios.get("https://www.googleapis.com/books/v1/volumes?q=books")
             //const response = await axios.get("https://jsonplaceholder.typicode.com/todos")
-            dispatch (setBooks (response.data));
-           // dispatch(hideLoader())  
+            dispatch (setBooks (response.items));
+            //console.log("from thunk:", response.items)
+            dispatch(hideLoader())  
         } catch (e) {
             alert(e.response.data)
         }  
