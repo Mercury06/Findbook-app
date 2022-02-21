@@ -1,10 +1,14 @@
 import React, { useState } from "react";
-import { getBooksThunkCreator } from "../../reducers/booksReducer";
+import { getBooksThunkCreator, setBooks } from "../../reducers/booksReducer";
 import "./SearchForm.css"
+import axios from "axios";
+import { useDispatch } from "react-redux";
 
 const SearchForm= () => {
 
     const[form, setForm] = useState({ searchValue: "", category: "", sorting: ""  })   
+
+    const dispatch = useDispatch(); // remove after test
    
     const changeHandler = event => {
         setForm({ ...form, [event.target.name]: event.target.value })
@@ -22,7 +26,8 @@ const SearchForm= () => {
                            onChange={changeHandler} />
                      {/* <button className="authorization__btn" onClick={() => registration({...form}, setResponse)}>Submit</button>
                  */}
-                    <button onClick={() => getBooksThunkCreator({...form})}>Find</button>
+                    <button onClick={() => dispatch(getBooksThunkCreator({...form}))}>Find</button>
+                    {/* <button onClick={() => fetchBooks()}>Find</button> */}
                 </div>
                 <div className="selectorsWrapper">
                     <select name="category" title="Category" onChange={changeHandler} > 

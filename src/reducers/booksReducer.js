@@ -1,3 +1,5 @@
+import axios from "axios"
+import { useDispatch } from "react-redux"
 import { booksAPI } from "./../API/api"
 import { hideLoader, showLoader } from "./appReducer"
 
@@ -17,8 +19,8 @@ const defaultState = {
 }
 
 export default function booksReducer(state = defaultState, action) {
-    
-    switch (action.type) {
+    //debugger
+    switch (action.type)    {
         case SET_BOOKS: return {...state, books: action.payload}
         // case DELETE_TODO: return {...state, todos: [...state.todos.filter(todo => todo.id !== action.payload)]}
         // case SET_CURRENT_PAGE: return {...state, currentPage: action.payload}
@@ -38,6 +40,9 @@ export default function booksReducer(state = defaultState, action) {
 }
 
 export const setBooks = (books) => ({type: SET_BOOKS, payload: books})
+
+
+
 // export const addNewTodo = (newTodo) => ({type: ADD_TODO, payload: newTodo})
 // export const deleteTodo = (id) => ({type: DELETE_TODO, payload: id})
 // export const setCurrentPage = (p) => ({type: SET_CURRENT_PAGE, payload: p })
@@ -46,20 +51,18 @@ export const setBooks = (books) => ({type: SET_BOOKS, payload: books})
 
 
 export const getBooksThunkCreator = ({ ...form}) => {
-    debugger
+    //debugger
     return async (dispatch) => {     
         try {   
-            dispatch(showLoader())
-            const response = await booksAPI.getBooks({ ...form})
+            //dispatch(showLoader())
+             const response = await booksAPI.getBooks({ ...form})
+            // const response = await axios.get("https://www.googleapis.com/books/v1/volumes?q=books")
+            //const response = await axios.get("https://jsonplaceholder.typicode.com/todos")
             dispatch (setBooks (response.data));
-            dispatch(hideLoader())  
+           // dispatch(hideLoader())  
         } catch (e) {
-            alert(e?.response?.data?.message)
+            alert(e.response.data)
         }  
     }}    
 
-
-
-
-
-
+   
