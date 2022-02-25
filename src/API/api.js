@@ -9,8 +9,6 @@ const params = {
 }   
 
 
-//return axios.get ( baseURL+`character?page=${currentPage}`)
-
 export const booksAPI = {
     
     getBooks ( {searchValue, category} ) {

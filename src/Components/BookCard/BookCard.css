@@ -1,0 +1,50 @@
+   
+.container {
+  width: 250px;
+  background-color: #f3f2f1;
+  padding: 25px 15px 20px;
+}
+
+.imageWrapper, .title {
+  cursor: pointer;
+}
+
+.imageWrapper {
+  min-height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+  transition: 0.3s; 
+
+}
+
+.imageWrapper:hover {
+    opacity: 0.5;
+}
+
+.imageWrapper img {
+    box-shadow: 14px 15px 15px -7px rgba(0, 0, 0, 0.4);
+  }
+
+
+.categories, .authors {
+  color: #878787;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.categories {
+  margin-bottom: 14px;
+  text-decoration: underline;
+}
+
+.title {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 15px;
+  text-decoration: none;
+  color: black;
+}
+

@@ -1,6 +1,7 @@
 import React from "react"
 import { useSelector } from "react-redux";
 import Loader from "../../assets/Loader/Loader";
+import BookCard from "../BookCard/BookCard";
 
 const BookList = () => {
 
@@ -14,7 +15,10 @@ const BookList = () => {
             { books && books.length > 0
                 ? books.map((item) => {
                     return (
-                        <div>{item.volumeInfo.title}</div>
+                        // <div>{item.volumeInfo.title}</div>
+                        <BookCard key={item.id} 
+                                  title={item.volumeInfo.title}
+                                  image={item.volumeInfo.imageLinks.smallThumbnail} />
                     )
                 })
                 : <div > <h3>list is empty</h3></div>}
