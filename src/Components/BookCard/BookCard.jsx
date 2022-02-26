@@ -2,7 +2,6 @@ import React from "react";
 import "./BookCard.css";
 //import coverFallback from "../../assets/pictures/book-cover-fallback.png"
 import {NavLink} from "react-router-dom";
-//import CommaSeparatedList from "../common/CommaSeparatedList/CommaSeparatedList";
 
 
 const BookCard = ({title, authors, categories, image, id}) => {

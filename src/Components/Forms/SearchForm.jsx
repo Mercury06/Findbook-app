@@ -8,7 +8,7 @@ const SearchForm= () => {
 
     const[form, setForm] = useState({ searchValue: "", category: "", sorting: ""  })   
 
-    const dispatch = useDispatch(); // remove after test
+    const dispatch = useDispatch(); 
    
     const changeHandler = event => {
         setForm({ ...form, [event.target.name]: event.target.value })

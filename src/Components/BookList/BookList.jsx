@@ -14,8 +14,7 @@ const BookList = () => {
             <h1>Found XXX results</h1>
             { books && books.length > 0
                 ? books.map((item) => {
-                    return (
-                        // <div>{item.volumeInfo.title}</div>
+                    return (                      
                         <BookCard key={item.id} 
                                   title={item.volumeInfo.title}
                                   image={item.volumeInfo.imageLinks.smallThumbnail} />
