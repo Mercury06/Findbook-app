@@ -8,15 +8,12 @@ const params = {
     key: API_KEY
 }   
 
-
 export const booksAPI = {
     
     getBooks ( {searchValue, category} ) {
         //debugger
         return axios.get ( baseURL + `?q=${searchValue}${category !== "all" ? `+ subject:${category}` : ""}`, {params})
-        // return axios.get ("https://www.googleapis.com/books/v1/volumes"+`?q=${searchValue}`)
-        // return axios.get ( "https://www.googleapis.com/books/v1/volumes?q=subject:books")
-        //return axios.get ( "https://jsonplaceholder.typicode.com/todos" )
+        // return axios.get ("https://www.googleapis.com/books/v1/volumes"+`?q=${searchValue}`)        
         .then (response => response.data)
             
             //return response

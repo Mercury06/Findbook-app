@@ -1,6 +1,5 @@
 import React from "react";
 import "./BookCard.css";
-//import coverFallback from "../../assets/pictures/book-cover-fallback.png"
 import {NavLink} from "react-router-dom";
 
 
