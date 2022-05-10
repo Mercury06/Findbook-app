@@ -12,14 +12,12 @@ export const booksAPI = {
     
     getBooks ( {searchValue, category} ) {
         //debugger
-        return axios.get ( baseURL + `?q=${searchValue}${category !== "all" ? `+ subject:${category}` : ""}`, {params})
-        // return axios.get ("https://www.googleapis.com/books/v1/volumes"+`?q=${searchValue}`)        
-        .then (response => response.data)
-            
-            //return response
-    }
-       
-
+        const response = axios.get ( baseURL + `?q=${searchValue}${category !== "all" ? `+ subject:${category}` : ""}`, {params})
+        //const response = axios.get ("https://www.googleapis.com/books/v1/volumes"+`?q=${searchValue}`)      
+        const data = response.data
+        console.log("data:",data)
+        return data
+    } 
 
 }
 
