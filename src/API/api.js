@@ -11,9 +11,10 @@ const params = {
 export const booksAPI = {
     
     getBooks ( {searchValue, category} ) {
-        //debugger
-        const response = axios.get ( baseURL + `?q=${searchValue}${category !== "all" ? `+ subject:${category}` : ""}`, {params})
+      
+        //const response = axios.get ( baseURL + `?q=${searchValue}${category !== "all" ? `+ subject:${category}` : ""}`, {params})
         //const response = axios.get ("https://www.googleapis.com/books/v1/volumes"+`?q=${searchValue}`)      
+        const response = axios.get ('https://www.poemist.com/api/v1/randompoems')
         const data = response.data
         console.log("data:",data)
         return data

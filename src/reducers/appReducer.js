@@ -6,7 +6,7 @@ const defaultState = {
 }
 
 export default function appReducer(state = defaultState, action) {
-    //debugger
+  
     switch (action.type) {
         case SHOW_LOADER: return {...state, loader: true}
         case HIDE_LOADER: return {...state, loader: false}

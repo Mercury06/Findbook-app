@@ -16,10 +16,10 @@ const SearchForm= () => {
     }
 
     return (
-        // <form onSubmit={handleSubmit} className={c.container}>
+        
             <div>
                 <div className="searchWrapper">
-                    {/* <Field  name="searchTerms" component={Input} placeholder={"Search..."}/> */}
+                    
                     <input name="searchValue" 
                            type="text" 
                            placeholder="Search book..."
